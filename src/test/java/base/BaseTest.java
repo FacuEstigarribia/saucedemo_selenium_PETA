@@ -24,7 +24,6 @@ public class BaseTest {
     @BeforeClass
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","driver/chromedriver");
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);

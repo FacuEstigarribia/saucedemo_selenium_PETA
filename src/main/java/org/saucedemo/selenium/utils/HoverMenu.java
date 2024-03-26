@@ -66,9 +66,5 @@ public class HoverMenu {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(element));
 
-////          Another way with Javascript:
-////        WebElement myElement = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(button));
-////        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", myElement);
-////        a.moveToElement(webElement).build().perform();
     }
 }

@@ -60,4 +60,8 @@ public class HomePage {
     private Select findDropdownElement(){
         return new Select(filter);
     }
+
+    public boolean isCartPresent(){
+        return cart.isEnabled();
+    }
 }
