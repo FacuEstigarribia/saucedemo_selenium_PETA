@@ -7,7 +7,7 @@ import org.saucedemo.selenium.pages.HomePage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class FilterTests extends BaseTest {
+public class FilterTest extends BaseTest {
     @Test
     public  void testAZFilterOrder(){
         HomePage homePage = goHomePage();

@@ -24,8 +24,6 @@ public class CheckoutPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
-
     public void typeFirstName(String name){
         firstName.sendKeys(name);
     }

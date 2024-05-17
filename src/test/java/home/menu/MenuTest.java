@@ -9,20 +9,17 @@ import org.saucedemo.selenium.pages.HomePage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class MenuTests extends BaseTest {
+public class MenuTest extends BaseTest {
     @Test
     public void testAllItemsButton(){
         HoverMenu hoverMenu = goHomePage().selectMenuOptions();
-
         assertTrue(hoverMenu.isMenuDisplayed(),"Menu isn't display");
-
         hoverMenu.clickAllItems();
     }
     @Test
     public void testAboutButton(){
         HomePage homePage = goHomePage();
         AboutPage aboutPage = homePage.selectMenuOptions().clickAboutLink();
-
         assertEquals(aboutPage.getTitle(),
                 "Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing");
     }
@@ -37,8 +34,6 @@ public class MenuTests extends BaseTest {
         HomePage homePage = goHomePage();
         homePage.selectMenuOptions().clickResetApp();
     }
-
-
     private HomePage goHomePage(){
         loginPage.setStandardUsername();
         loginPage.setPassword();

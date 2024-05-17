@@ -27,14 +27,12 @@ public class HomePage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
     //Methods for menu
     public HoverMenu selectMenuOptions(){
         Actions action = new Actions(driver);
         action.moveToElement(menuButton).click().perform();
         return new HoverMenu(driver,hoverElement);
     }
-
     //Methods for filter
     public void selectFromDropdown(String option){
         findDropdownElement().selectByValue(option);
@@ -43,7 +41,6 @@ public class HomePage {
         List<WebElement> selectedElements = findDropdownElement().getAllSelectedOptions();
         return selectedElements.stream().map(WebElement::getText).collect(Collectors.toList());
     }
-
     //Methods for shopping cart
     public ShoppingCartPage goShoppingCart(){
         selectAndClickLocator(cart);
@@ -52,7 +49,6 @@ public class HomePage {
     public String check(){
         return title.getText();
     }
-
     //Helper methods
     private void selectAndClickLocator(WebElement locator){
         locator.click();
@@ -60,7 +56,6 @@ public class HomePage {
     private Select findDropdownElement(){
         return new Select(filter);
     }
-
     public boolean isCartPresent(){
         return cart.isEnabled();
     }

@@ -16,13 +16,10 @@ public class LoginPage {
     @FindBy(css = "div.error-message-container")
     private WebElement errorMessage;
 
-
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
-
     public void setStandardUsername(){
         username.sendKeys("standard_user");
     }
@@ -45,8 +42,6 @@ public class LoginPage {
     public String errorMessage(){
         return errorMessage.getText();
     }
-
-
     //Methods for data driver
     public void setUsernameDP(String user){
         username.sendKeys(user);

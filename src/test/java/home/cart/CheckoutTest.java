@@ -2,7 +2,6 @@ package home.cart;
 
 import base.BaseTest;
 //import base.dataProvider.CheckOutData;
-import base.dataProvider.CheckoutData;
 import base.dataProvider.DataProviderClass;
 import org.saucedemo.selenium.pages.CheckoutOverviewPage;
 import org.testng.annotations.Listeners;
@@ -12,7 +11,7 @@ import org.saucedemo.selenium.pages.CheckoutPage;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 @Listeners(base.Listener.class)
-public class CheckoutTests extends BaseTest {
+public class CheckoutTest extends BaseTest {
     @Test(dataProviderClass = DataProviderClass.class , dataProvider = "searchProvider")
     public void testData(String name, String surname, String zipCode, String message){
         CheckoutPage checkoutPage = goCheckOutPage();

@@ -25,7 +25,6 @@ public class HoverMenu {
     @FindBy(id = "reset_sidebar_link")
     private WebElement resetAppButton;
 
-
     public HoverMenu(WebDriver driver, WebElement hoverElement) {
         PageFactory.initElements(driver, this);
         this.driver = driver;

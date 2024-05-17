@@ -18,8 +18,6 @@ public class CheckoutOverviewPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
-
     public HomePage clickCancelButton(){
         cancelButton.click();
         return new HomePage(driver);
