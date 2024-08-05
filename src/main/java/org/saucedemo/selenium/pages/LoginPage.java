@@ -20,6 +20,10 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+
+    public void open(){
+        driver.get("https://www.saucedemo.com/");
+    }
     public void setStandardUsername(){
         username.sendKeys("standard_user");
     }

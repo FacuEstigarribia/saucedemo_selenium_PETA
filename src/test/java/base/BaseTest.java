@@ -19,7 +19,6 @@ import java.io.IOException;
 
 public class BaseTest {
     private WebDriver driver;
-    protected LoginPage loginPage;
 
     @BeforeClass
     public void setUp(){
@@ -27,12 +26,11 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-        goLogin();
+
     }
     @BeforeMethod
-    public void goLogin(){
-        driver.get("https://www.saucedemo.com/");
-        loginPage = new LoginPage(driver);
+    public void maximizeWindow(){
+        driver.manage().window().maximize();
     }
     @AfterMethod
     public void recordFailure(ITestResult result){
@@ -52,5 +50,9 @@ public class BaseTest {
     }
     public WindowManager getWindowManager(){
         return new WindowManager(driver);
+    }
+
+    protected WebDriver getDriver() {
+        return driver;
     }
 }

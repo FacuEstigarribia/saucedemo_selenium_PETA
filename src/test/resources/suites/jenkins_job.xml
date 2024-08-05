@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Jenkins Job Login - Saucedemo" >
+
+    <parameter name="suiteOwner" value="festigarribia"/>
+    <parameter name="jenkinsJobName" value="Login Job"/>
+    <parameter name="jenkinsJobType" value="web"/>
+    <parameter name="jenkinsEmail" value="festigarribia@solvd.com"/>
+    <parameter name="jenkinsEnvironments" value="DEMO"/>
+
+    <test name="Saucedemo web Login Test using single driver">
+        <classes>
+            <class name="login.LoginTest" />
+        </classes>
+    </test>
+</suite>

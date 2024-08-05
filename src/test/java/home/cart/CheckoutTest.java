@@ -4,6 +4,7 @@ import base.BaseTest;
 //import base.dataProvider.CheckOutData;
 import base.dataProvider.DataProviderClass;
 import org.saucedemo.selenium.pages.CheckoutOverviewPage;
+import org.saucedemo.selenium.pages.LoginPage;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.saucedemo.selenium.pages.CheckoutPage;
@@ -81,6 +82,7 @@ public class CheckoutTest extends BaseTest {
 
 
     private CheckoutPage goCheckOutPage(){
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.setStandardUsername();
         loginPage.setPassword();
         return loginPage.clickLoginButton().goShoppingCart().goCheckout();

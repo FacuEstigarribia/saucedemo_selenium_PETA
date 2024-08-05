@@ -2,6 +2,7 @@ package login;
 
 import base.BaseTest;
 import base.dataProvider.DataProviderClass;
+import org.saucedemo.selenium.pages.LoginPage;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.saucedemo.selenium.pages.HomePage;
@@ -13,6 +14,8 @@ import static org.testng.Assert.assertTrue;
 public class LoginTest extends BaseTest {
     @Test(dataProviderClass = DataProviderClass.class , dataProvider = "searchProvider")
     public void testLogIn(String user, String password, String message){
+        LoginPage loginPage = new LoginPage(getDriver());
+        loginPage.open();
         loginPage.setUsernameDP(user);
         loginPage.setPasswordDP(password);
         HomePage homePage = loginPage.clickLoginButton();

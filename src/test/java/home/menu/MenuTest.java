@@ -1,6 +1,7 @@
 package home.menu;
 
 import base.BaseTest;
+import org.saucedemo.selenium.pages.LoginPage;
 import org.saucedemo.selenium.utils.HoverMenu;
 import org.testng.annotations.Test;
 import org.saucedemo.selenium.pages.AboutPage;
@@ -35,6 +36,7 @@ public class MenuTest extends BaseTest {
         homePage.selectMenuOptions().clickResetApp();
     }
     private HomePage goHomePage(){
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.setStandardUsername();
         loginPage.setPassword();
         return loginPage.clickLoginButton();

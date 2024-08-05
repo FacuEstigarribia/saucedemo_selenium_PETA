@@ -1,6 +1,7 @@
 package home.filter;
 
 import base.BaseTest;
+import org.saucedemo.selenium.pages.LoginPage;
 import org.testng.annotations.Test;
 import org.saucedemo.selenium.pages.HomePage;
 
@@ -45,6 +46,7 @@ public class FilterTest extends BaseTest {
 
 
     private HomePage goHomePage(){
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.setStandardUsername();
         loginPage.setPassword();
         return loginPage.clickLoginButton();
