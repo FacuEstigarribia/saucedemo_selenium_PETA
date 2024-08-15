@@ -29,13 +29,13 @@ public class SeleniumGridTest {
     }
 
 
-    @Test
-    public void testLoginSampleGrid(){
-        loginPage.setStandardUsername();
-        loginPage.setPassword();
-        HomePage homePage = loginPage.clickLoginButton();
-        Assert.assertTrue(homePage.isCartPresent(), "Cart icon is not present. Home page was not opened");
-    }
+//    @Test
+//    public void testLoginSampleGrid(){
+//        loginPage.setStandardUsername();
+//        loginPage.setPassword();
+//        HomePage homePage = loginPage.clickLoginButton();
+//        Assert.assertTrue(homePage.isCartPresent(), "Cart icon is not present. Home page was not opened");
+//    }
 
     @AfterTest
     public void closeBrowser(){

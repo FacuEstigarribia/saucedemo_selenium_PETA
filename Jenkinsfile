@@ -7,29 +7,29 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clona tu repositorio desde Git
+                // Clone repo from github
                 git url: 'https://github.com/FacuEstigarribia/saucedemo_selenium_PETA.git'
             }
         }
 
         stage('Build') {
             steps {
-                // Compila el proyecto con Maven o Gradle
-                sh './mvn clean install' // Usar mvnw si usas Maven Wrapper
+                // Build project with Maven
+                sh './mvn clean install'
 
             }
         }
 
         stage('Run Tests') {
             steps {
-                // Ejecuta la suite de TestNG
+                // Execute Testng suite
                 sh './mvnw test -DsuiteXmlFile=src/test/resources/suites/jenkins_job.xml'
             }
         }
 
         stage('Publish Test Results') {
             steps {
-                // Publica los resultados de las pruebas
+                // Publish test results
                 publishTestNGResults(pattern: '**/target/surefire-reports/testng-results.xml')
             }
         }
@@ -37,15 +37,15 @@ pipeline {
 
     post {
         always {
-            // Limpiar cualquier recurso
+            // Clean any resource
             cleanWs()
         }
         success {
-            // Notificación en caso de éxito
+            // Notify success case
             echo 'Tests passed successfully!'
         }
         failure {
-            // Notificación en caso de fallo
+            // Notify error case
             echo 'Tests failed. Check the reports for details.'
         }
     }

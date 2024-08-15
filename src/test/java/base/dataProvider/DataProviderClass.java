@@ -17,9 +17,9 @@ public class DataProviderClass {
         CSVReader csvReader;
 
         if(m.getName().equalsIgnoreCase("testLogin")){
-            csvReader = new CSVReader(new FileReader(System.getProperty("user.dir")+"/src/test/resources/" +login ),',');
+            csvReader = new CSVReader(new FileReader(System.getProperty("user.dir")+"/src/test/resources/data/" +login ),',');
         }else {
-            csvReader = new CSVReader(new FileReader(System.getProperty("user.dir")+"/src/test/resources/" + checkout ),',');
+            csvReader = new CSVReader(new FileReader(System.getProperty("user.dir")+"/src/test/resources/data/" + checkout ),',');
         }
 
         List<String[]> csvData=csvReader.readAll();

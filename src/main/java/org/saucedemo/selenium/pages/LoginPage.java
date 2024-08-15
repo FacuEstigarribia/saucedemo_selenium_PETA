@@ -22,23 +22,12 @@ public class LoginPage {
     }
 
     public void open(){
+        if (driver == null) {
+            throw new IllegalStateException("WebDriver is not initialized.");
+        }
         driver.get("https://www.saucedemo.com/");
     }
-    public void setStandardUsername(){
-        username.sendKeys("standard_user");
-    }
-    public void setLockedUsername(){
-        username.sendKeys("locked_out_user");
-    }
-    public void setProblemUsername(){
-        username.sendKeys("problem_user");
-    }
-    public void setPerformanceUsername(){
-        username.sendKeys("performance_glitch_user");
-    }
-    public void setPassword(){
-        password.sendKeys("secret_sauce");
-    }
+
     public HomePage clickLoginButton(){
         loginButton.click();
         return new HomePage(driver);
@@ -46,6 +35,8 @@ public class LoginPage {
     public String errorMessage(){
         return errorMessage.getText();
     }
+
+
     //Methods for data driver
     public void setUsernameDP(String user){
         username.sendKeys(user);

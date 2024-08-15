@@ -29,4 +29,8 @@ public class CheckoutOverviewPage {
     public String check(){
         return title.getText();
     }
+
+    public boolean isTitlePresent(){
+        return title.isDisplayed();
+    }
 }

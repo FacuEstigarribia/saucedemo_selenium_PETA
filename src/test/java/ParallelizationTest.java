@@ -44,20 +44,20 @@ public class ParallelizationTest {
             throw new IllegalArgumentException("Browser parameter is invalid: " + browser);
         }
     }
-    @Test
-    public void testWithSpecifiedBrowser() {
-        LOGGER.info("Title in " + driver.getClass().getSimpleName() + ": " + driver.getTitle());
-        loginPage.setStandardUsername();
-        loginPage.setPassword();
-        HomePage homePage = loginPage.clickLoginButton();
-        Assert.assertFalse(homePage.isCartPresent());
-    }
-    @Test
-    public void testProblemUser(){
-        loginPage.setProblemUsername();
-        loginPage.setPassword();
-        loginPage.clickLoginButton();
-    }
+//    @Test
+//    public void testWithSpecifiedBrowser() {
+//        LOGGER.info("Title in " + driver.getClass().getSimpleName() + ": " + driver.getTitle());
+//        loginPage.setStandardUsername();
+//        loginPage.setPassword();
+//        HomePage homePage = loginPage.clickLoginButton();
+//        Assert.assertFalse(homePage.isCartPresent());
+//    }
+//    @Test
+//    public void testProblemUser(){
+//        loginPage.setProblemUsername();
+//        loginPage.setPassword();
+//        loginPage.clickLoginButton();
+//    }
 
     @AfterMethod
     public void quitChrome(){

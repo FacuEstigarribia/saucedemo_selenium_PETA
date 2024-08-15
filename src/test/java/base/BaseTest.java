@@ -18,7 +18,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class BaseTest {
-    private WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeClass
     public void setUp(){
@@ -53,6 +53,9 @@ public class BaseTest {
     }
 
     protected WebDriver getDriver() {
+        if (driver == null) {
+            throw new IllegalStateException("WebDriver is not initialized.");
+        }
         return driver;
     }
 }

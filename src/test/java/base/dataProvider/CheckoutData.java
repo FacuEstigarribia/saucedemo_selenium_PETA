@@ -11,7 +11,7 @@ public class CheckoutData {
 
     @DataProvider(name = "checkOutData")
     public Object[][] readCsv() throws IOException {
-        CSVReader csvReader = new CSVReader(new FileReader(System.getProperty("user.dir")+"/src/test/resources/checkOutData.csv"),';');
+        CSVReader csvReader = new CSVReader(new FileReader(System.getProperty("user.dir")+"/src/test/resources/data/checkOutData.csv"),';');
         List<String[]> csvData = csvReader.readAll();
         Object[][] csvDataObject=new Object[csvData.size()][4];
         for (int i=0;i<csvData.size();i++) {

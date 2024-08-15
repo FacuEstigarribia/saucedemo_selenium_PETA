@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <!-- Listener configuration for the entire suite -->
+    <listeners>
+        <listener class-name="base.Listener"/>
+    </listeners>
+
+    <!-- Test para el Login -->
+    <test name="LoginTest">
+
+        <groups>
+            <run>
+                <include name="login"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="login.LoginTest"/>
+        </classes>
+    </test>
+
+    <!-- Test para el Checkout -->
+    <test name="CheckoutTest">
+
+        <groups>
+            <run>
+                <include name="checkout"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="home.cart.CheckoutTest"/>
+        </classes>
+    </test>
+</suite>
